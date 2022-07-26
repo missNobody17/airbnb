@@ -1,0 +1,32 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hero--img {
+    padding: 26px 77px;
+    max-width: 400px;
+    align-self: center;
+}
+
+.hero--content {
+    text-align: left;
+    font-family: 'Poppins';
+    font-style: normal;
+    padding: 8px 36px;
+}
+
+.hero--title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 110%;
+    color: #000000;
+}
+
+.hero--text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 110%;
+    color: #222222;
+}

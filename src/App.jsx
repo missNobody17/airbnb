@@ -1,32 +1,25 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import {Navbar} from './components/Navbar'
+import {Hero} from './components/Hero'
+import {Card} from './components/Card'
+import data from './data'
 
 function App() {
   const [count, setCount] = useState(0)
+  const cards = data.map(card =>  <Card key={card.id} item={card}/>/*<Card key={card.title} openSpots={card.openSpots} image=
+    {`./src/assets/${card.coverImg}`} rating={card.stats.rating} reviewCount={card.stats.reviewCount} country={card.location} title={card.title} price={card.price}/>*/)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <div className='app--items'>
+      <Navbar/>
+      <Hero/>
+      <section className="cards-list">
+         {cards}
+      </section>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
